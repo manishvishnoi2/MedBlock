@@ -1,0 +1,90 @@
+/*
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/**
+ * Write your model definitions here
+ */
+
+namespace org.acme.nucypher
+
+participant Patient identified by pid {
+  o String pid
+  o String Name
+  o String gender
+  o String claim_data
+}
+
+asset Roothash identified by pid {
+  o String hash
+  o String pid 
+// --> SampleParticipant owner
+//  o String value
+}
+asset Proofrecord identified by pid {
+  o String pid
+  o String value
+  o String proof
+  o String valid
+}
+
+asset Ipfshash identified by pid {
+  o String pid
+  o String hash
+}
+
+transaction  storehash {
+  o String hash
+  o String pid
+}
+
+concept  Pid {
+  o String  value
+  o String hash
+  o Pf[] proof
+}
+
+concept  Name {
+  o String  value
+  o String hash
+  o Pf[] proof
+
+}
+
+concept  Gender {
+  o String  value
+  o String hash
+  o Pf[] proof
+
+}
+
+concept  Claim_data {
+  o String  value
+  o String hash
+  o Pf[] proof
+
+}
+
+asset Mtree identified by email{
+  o String mroot
+  o String email
+  o Pid pid
+  o Name name
+  o Gender gender
+  o Claim_data claim_data
+}
+
+concept Pf {
+  o String direction
+  o String hash
+}

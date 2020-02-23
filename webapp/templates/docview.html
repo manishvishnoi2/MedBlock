@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+<body style="background-image: url('../static/images/bg-01.jpg')">
+<h3 style="font-family:'Open Sans',Arial,Helvetica,sans-serif;font-size:32px;color:#FFFFFF;">Data Shared with you : </h3>
+{% for prop in info %}
+  <article class="media content-section">
+    <div class="media-body" >
+        <div class="article-metadata">
+          <a class="mr-2">{{ prop['resourceType'] }}</a>
+          <small class="text-muted">{{ prop['value'] }}</small>
+          <br>
+      </div>
+<div class="article-metadata">
+          <a class="mr-2">Validation through Merkle root</a>
+          <small class="text-muted">{{ validation[prop['resourceType']] }}</small>
+          <br>
+      </div>
+
+    </article>
+</body>
+{% endfor %}
+{% endblock content %}

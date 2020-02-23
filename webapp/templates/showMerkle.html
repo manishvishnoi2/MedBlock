@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+<body style="background-image: url('../static/images/bg-01.jpg')">
+<h3 style="font-family:'Open Sans',Arial,Helvetica,sans-serif;font-size:32px;color:#FFFFFF;">Your data:</h3>
+{% for prop in info[0] %}
+  <article class="media content-section">
+    <div class="media-body" >
+        <div class="article-metadata">
+          <a class="mr-2">{{ prop }}</a>
+          <small class="text-muted">{{ info[0][prop]['Value'] }}</small>
+          <br>
+          <a class="mr-2">{{ 'Hash' }}</a>
+          <small class="text-muted">{{ info[0][prop]['Hash'] }}</small>
+          <br>
+          <a class="mr-2">{{ 'Hash Proof' }}</a>
+          <small class="text-muted">{{ info[0][prop]['Proof'] }}</small>
+        </div>
+      </div>
+    </article>
+</body>
+{% endfor %}
+{% endblock content %}

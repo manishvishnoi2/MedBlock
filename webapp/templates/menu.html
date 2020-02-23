@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="../static/menu_style.css">
+</head>
+	<title></title>
+</head>
+<body style="background-image: url('../static/images/bg-01.jpg')">
+<div id="heading"><h2>MedFabric4Me</h2>
+
+    <p>Choose an option:<p></div>
+    
+<div id="container">
+
+<div id="tl" onclick="gop()"><p>Enter Patient Data</p></div>
+<div id="bl" onclick="goc()"><p>Share Data</p></div>
+<div id="tr" onclick="goo()"><p>View Merkle</p></div>
+<div id="br" onclick="goa()"><p>Doctor view</p></div>
+</div>
+
+<script>
+function gop() {
+    window.open('/', '_blank');
+}
+function goc() {
+    window.open('/share', '_blank');
+}
+function goo() {
+    var pid=prompt("Please enter your email", "");
+    if(pid==null)
+    {
+
+        alert("You did not enter an email");
+    }
+    else{
+        window.open('/merkle?pid='+pid, '_blank');
+
+    }
+    
+}
+function goa() {
+    window.open('/viewdoc', '_blank');
+}
+
+</script>
+
+</body>
+</html>

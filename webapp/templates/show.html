@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+<h3>Properties</h3>
+{% for prop in info[0] %}
+  <article class="media content-section">
+    <div class="media-body">
+        <div class="article-metadata">
+          <a class="mr-2">{{ prop }}</a>
+          <small class="text-muted">{{ info[0][prop]['Value'] }}</small>
+          <br>
+          <a class="mr-2">{{ 'Hash' }}</a>
+          <small class="text-muted">{{ info[0][prop]['Hash'] }}</small>
+        </div>
+      </div>
+    </article>
+{% endfor %}
+{% endblock content %}
